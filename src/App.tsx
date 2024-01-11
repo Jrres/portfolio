@@ -238,13 +238,13 @@ export default function App() {
                 <Card key={item.id} border="secondary" className="mb-4" style={{ width: '17rem', borderRadius: '15px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
 
                   <Card.Img variant="top" src={item.image} style={{ height: '200px', width: '100%', objectFit: 'cover', borderTopLeftRadius: '15px', borderTopRightRadius: '15px' }} />
-                  <Card.Body>
+                  <Card.Body >
                     <div style={{ marginBottom: '10px' }}>
                       {item.tags.map((val) => (
                         <Badge key={val} bg='primary' style={{ marginRight: '5px' }}>{val}</Badge>
                       ))}
                     </div>
-                    <Accordion text={item.description} title="Description" style={{ maxHeight: '50px', overflow: 'hidden' }} />
+                    <Accordion text={item.description} title="Description"   />
                     <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                       {item.icon_time}
                       <div style={{ marginLeft: '5px' }}>Development Time: {item.time}</div>
@@ -256,7 +256,7 @@ export default function App() {
                     </div>
                   </Card.Body>
                   <Card.Footer style={{ borderBottomLeftRadius: '15px', borderBottomRightRadius: '15px' }}>
-                    <Card.Link variant="primary" href={item.Address} style={{ color: '#000' }}>
+                    <Card.Link  href={item.Address} style={{ color: '#000' }}>
                       < CiLink />
                       {item.url}
                     </Card.Link>
@@ -310,8 +310,8 @@ export default function App() {
             Hello, I'm {user.name}, and im a full stack developer who's experienced in building web applications using React, Node.js, Express, MongoDB, MySQL, and more. I'm currently pursuing my Bachelors in CS at GSU, and i'm always looking to expand my knowledge and skills.
             <Card.Text>
               <IoShareSocialSharp />
-              <div class="d-flex gap-4">
-                {user.links.map((val) => (
+              <div className="d-flex gap-4">
+                {user.links.map((val:string) => (
                   <a key={val.name} href={val.url}>
                     {val.icon}
                     {val.name}
