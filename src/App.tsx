@@ -2,10 +2,11 @@ import './App.css'
 import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
-import Accordion from './Accordion.tsx';
-import Chart from './chart.tsx';
+import Accordion from './Accordion';
+import Chart from './chart';
 import ListGroup from 'react-bootstrap/ListGroup';
-import TimeLine from './timeline.tsx'
+import TimeLine from './timeline'
+import FadeIn from './FadeInComponent'
 import {
   FaXTwitter,
 } from "react-icons/fa6";
@@ -23,7 +24,6 @@ import { FaComputer } from "react-icons/fa6";
 import { FaUserGraduate } from "react-icons/fa";
 import { CiLink } from "react-icons/ci";
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import FadeIn from './FadeInComponent.tsx'
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
@@ -281,7 +281,7 @@ export default function App() {
           <h2>About Me</h2>
         </div>
         <Card className="m-4 p-4" style={{ zIndex: 2 }}>
-          <div class="m-4">
+          <div className="m-4">
             <Card.Img src={user.image} style={{ width: '40px', height: '40px' }}>
             </Card.Img>
 
