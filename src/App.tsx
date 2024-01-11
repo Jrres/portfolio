@@ -41,7 +41,11 @@ import { FaUnity } from "react-icons/fa";
 import { SiHackster } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { FaSlack } from "react-icons/fa6";
-
+interface ItemType {
+  icon_calendar: JSX.Element;
+  icon_complete: JSX.Element;
+  icon_time: JSX.Element;
+}
 export default function App() {
   const [data, setData] = useState<any[]>([])
 
@@ -52,7 +56,7 @@ export default function App() {
         //edit the github link to make changes
         const response = await axios.get('https://raw.githubusercontent.com/Jrres/portfolio_data/main/data.json');
         console.log(response)
-        const newData = response.data.data.map((item) => {
+        const newData = response.data.data.map((item: ItemType) => {
           item.icon_calendar = <CiCalendarDate />;
           item.icon_complete = <MdDomainVerification />;
           item.icon_time = <FaClock />;
