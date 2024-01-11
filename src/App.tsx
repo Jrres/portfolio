@@ -244,7 +244,7 @@ export default function App() {
                         <Badge key={val} bg='primary' style={{ marginRight: '5px' }}>{val}</Badge>
                       ))}
                     </div>
-                    <Accordion text={item.description} title="Description"   />
+                    <Accordion text={item.description} title={item.url}   />
                     <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
                       {item.icon_time}
                       <div style={{ marginLeft: '5px' }}>Development Time: {item.time}</div>
