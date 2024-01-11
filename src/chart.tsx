@@ -6,6 +6,7 @@ import {
   BarElement,
   Title,
 } from 'chart.js';
+import { Doughnut, Bar } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.register(
   CategoryScale,
