@@ -95,7 +95,7 @@ export const skill_data = {
 };
 
 
-export default function App(prop : Object) {
+export default function App( prop: { isLanguage: boolean, isSkill: boolean }) {
   return <div style={{ height: "300px", width: "500px" }}>
 
     {prop.isLanguage ? <Doughnut data={language_data} height='300' /> : null}
