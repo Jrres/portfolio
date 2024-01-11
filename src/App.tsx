@@ -41,11 +41,29 @@ import { FaUnity } from "react-icons/fa";
 import { SiHackster } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { FaSlack } from "react-icons/fa6";
+
+
 interface ItemType {
   icon_calendar: JSX.Element;
   icon_complete: JSX.Element;
   icon_time: JSX.Element;
 }
+interface Val {
+  description: string;
+  icon_time: JSX.Element;
+  icon_calendar: JSX.Element;
+  completed: boolean;
+  status: string; // assuming status is a string property
+  tags: string[]; // assuming tags is an array of strings
+  time: string; // assuming time is a string property
+  icon_complete: JSX.Element; // assuming icon_complete is a JSX element
+  Address: string; // assuming Address is a string property
+  url: string; // assuming url is a string property
+  image: string; // assuming image is a string property
+  id: string; // assuming id is a string property
+}
+
+
 export default function App() {
   const [data, setData] = useState<any[]>([])
 
@@ -62,7 +80,7 @@ export default function App() {
           item.icon_time = <FaClock />;
           return item;
         });
-        setData(newData) // If you want to add to the existing array
+        setData(newData as Val[]) // If you want to add to the existing array
         console.log(data)
       } catch (err) {
         console.log(err);
@@ -215,7 +233,7 @@ export default function App() {
 
         <div className="d-flex flex-wrap justify-content-start gap-4">
           {
-            data ? data.map((item) => (
+            data ? data.map((item : Val) => (
               <FadeIn>
                 <Card key={item.id} border="secondary" className="mb-4" style={{ width: '17rem', borderRadius: '15px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
 
