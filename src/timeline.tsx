@@ -1,12 +1,13 @@
 import React from 'react';
 import { Container, ListGroup } from 'react-bootstrap';
-import FadeIn from './FadeInComponent.tsx';
+import FadeIn from './FadeInComponent';
 
 interface TimelineEvent {
   title: string;
   date: string;
   description: string;
-  isEnd: boolean; // Assuming isEnd is a property of TimelineEvent
+  isEnd: boolean;
+  icons: JSX.Element[]; // Add the 'icons' property to the interface
 }
 
 interface TimelineProps {
@@ -17,7 +18,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
   return (
     <Container className="mt-5">
       <ListGroup>
-        {events.map((event, index) => (
+        {events.map((event: TimelineEvent, index: number) => (
           <FadeIn key={index}>
             <ListGroup.Item className={event.isEnd ? 'text-success' : 'bg-none'}>
               <div className="d-flex w-100 justify-content-between">
@@ -25,14 +26,15 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
                 <small>{event.date}</small>
               </div>
               <p className="mb-1">{event.description}</p>
-              <section>
-                {event.icons.map((i, iconIndex) => (
+              <section className="d-flex mx-2 gap-4">
+                {event.icons.map((i: JSX.Element, iconIndex: number) => ( // Specify the types of 'i' and 'iconIndex'
                   <div key={iconIndex}>{i}</div>
                 ))}
               </section>
             </ListGroup.Item>
           </FadeIn>
         ))}
+
       </ListGroup>
     </Container>
   );
