@@ -6,19 +6,6 @@ import {
   BarElement,
   Title,
 } from 'chart.js';
-import { Doughnut, Bar } from 'react-chartjs-2';
-import { FaXTwitter,
-   } from "react-icons/fa6";
-import { SiGoogledocs } from "react-icons/si";
-import { IoLogoFirebase } from "react-icons/io5";
-import { MdDomainVerification } from "react-icons/md";
-import { FaVuejs,FaJira ,FaReact, FaAngular,FaNodeJs ,FaGithub,FaClock   } from "react-icons/fa";
-import { CiLinkedin,CiCalendarDate } from "react-icons/ci";
-import { GrDisabledOutline,GrStatusGood } from "react-icons/gr";
-import { RiTwitterXFill } from "react-icons/ri";
-
-
-
 ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.register(
   CategoryScale,
@@ -28,13 +15,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-const CustomXAxisLabel = ({ value }) => (
-  <div style={{ display: 'flex', alignItems: 'center' }}>
-    <FaCoffee style={{ marginRight: '5px' }} />
-    {value}
-  </div>
-);
-
 export const language_data = {
   labels: ['C++', 'Java', 'C#', 'JS Libs', 'python'],
   datasets: [
@@ -114,7 +94,7 @@ export const skill_data = {
 };
 
 
-export default function App(prop) {
+export default function App(prop : Object) {
   return <div style={{ height: "300px", width: "500px" }}>
 
     {prop.isLanguage ? <Doughnut data={language_data} height='300' /> : null}
