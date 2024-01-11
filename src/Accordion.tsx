@@ -1,6 +1,10 @@
 import Accordion from 'react-bootstrap/Accordion';
+interface AccordionProps {
+  title: string;
+  text: string;
+}
 
-function BasicExample(props: Object) {
+function BasicExample(props: AccordionProps) {
   return (
     <Accordion defaultActiveKey="null" >
       <Accordion.Item eventKey="0" >
